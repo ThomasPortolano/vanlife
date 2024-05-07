@@ -1,0 +1,28 @@
+.intro__container{
+    display: flex;
+    flex-direction: column;
+    background-image: url(/src/Intro/Intro-bg.jpg);
+    padding: 2rem;
+    color: #FFFFFF;
+}
+
+.intro__title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.intro__subtitle{
+    margin-bottom: 2rem;
+}
+
+button  {
+    background-color: #FF8C38;
+    border: none;
+    font-family: inherit;
+    font-weight: 800;
+    padding: 0.5rem;
+    border-radius: 4px;
+    color: #FFFFFF;
+}

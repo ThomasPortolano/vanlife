@@ -1,0 +1,39 @@
+.about__container {
+    background-color: #FFF7ED;
+    padding: 0rem 2rem 2rem 2rem;
+}
+
+.about__title{
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.about__body {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+img {
+    width: 100%;
+}
+
+.about__cta__container{
+    background-color: #FFCC8D;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.about__cta__title {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+button.about__cta{
+    background-color: #161616;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+}
