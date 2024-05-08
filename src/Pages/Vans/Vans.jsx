@@ -31,6 +31,7 @@ export default function Vans() {
 
   return (
     <div className="van__container">
+      <div className="van__title">Explore our van options</div>
       <div className="van__list">{vanElements}</div>
     </div>
   );
