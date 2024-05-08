@@ -10,6 +10,7 @@ import Navbar from "./Navbar/Navbar";
 import Intro from "./Pages/Intro/Intro";
 import About from "./Pages/About/About";
 import Vans from "./Pages/Vans/Vans";
+import VanDetail from "./Pages/Vans/VanDetail";
 
 import "./index.css";
 import "../server";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<Intro />} />
         <Route path="/vans" element={<Vans />} />
         <Route path="/about" element={<About />} />
+        <Route path="/vans/:id" element={<VanDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>
