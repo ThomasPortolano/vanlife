@@ -1,7 +1,10 @@
 .intro__container{
     display: flex;
     flex-direction: column;
-    background-image: url(/src/Intro/Intro-bg.jpg);
+    background-image: url(../../../public/Intro-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 2rem;
     color: #FFFFFF;
 }
