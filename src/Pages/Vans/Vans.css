@@ -1,0 +1,52 @@
+.van__container{
+    /* margin: 2rem auto; */
+    max-width: 800px;
+}
+
+.van__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.van__details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.van__name{
+    font-size: 1.4rem;
+}
+
+.van__price{
+    font-size: 1.2rem;
+}
+
+img.van__image{
+    height: 230px;
+    width: auto;
+    border-radius: 4px;
+}
+
+.van__type{
+    color: #FFEAD0;
+    border-radius: 4px;
+    padding: 0.3rem 0.5rem;
+    display: inline-block;
+}
+
+.van__type-simple{
+    background-color: #E17654;
+}
+
+.van__type-luxury{
+    background-color: #161616;
+}
+
+.van__type-rugged{
+    background-color: #115E59;
+}

@@ -12,6 +12,7 @@ import About from "./Pages/About/About";
 import Vans from "./Pages/Vans/Vans";
 
 import "./index.css";
+import "../server";
 
 function App() {
   return (
