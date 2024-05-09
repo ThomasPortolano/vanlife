@@ -6,11 +6,13 @@ import ReactDOM from "react-dom/client";
 import Intro from "./Pages/Intro/Intro";
 import About from "./Pages/About/About";
 import Vans from "./Pages/Vans/Vans";
-import VanDetail from "./Pages/Vans/VanDetail";
+import VanDetail from "./Pages/Vans/VanDetails";
 import Layout from "./Components/Layout";
 import HostLayout from "./Components/HostLayout";
 import Dashboard from "./Pages/Host/Dashboard";
 import Income from "./Pages/Host/Income";
+import HostVan from "./Pages/Host/HostVan";
+import HostVanDetails from "./Pages/Host/HostVanDetails";
 import Review from "./Pages/Host/Review";
 
 import "./index.css";
@@ -29,6 +31,8 @@ function App() {
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
+            <Route path="vans" element={<HostVan />} />
+            <Route path="vans/:id" element={<HostVanDetails />} />
             <Route path="review" element={<Review />} />
           </Route>
         </Route>

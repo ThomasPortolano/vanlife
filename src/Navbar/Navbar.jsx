@@ -39,7 +39,3 @@ export default function Navbar() {
     </div>
   );
 }
-
-/* {({ isActive }) => {
-            isActive ? "navbar__menu-item navbar__active-item" : null;
-          }} */

@@ -30,6 +30,13 @@ export default function Layout() {
         <NavLink
           className="host__nav__elements"
           style={({ isActive }) => (isActive ? activeStyle : null)}
+          to="/host/vans"
+        >
+          Vans
+        </NavLink>
+        <NavLink
+          className="host__nav__elements"
+          style={({ isActive }) => (isActive ? activeStyle : null)}
           to="/host/review"
         >
           Reviews
