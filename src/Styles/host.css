@@ -1,0 +1,12 @@
+.host__nav__container{
+    margin: 2rem;
+}
+
+.host__nav__elements{
+    margin: 1rem;
+}
+
+.host__nav__elements:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

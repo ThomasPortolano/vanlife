@@ -2,15 +2,16 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/* Importing UI Components */
-import Footer from "./Footer/Footer";
-import Navbar from "./Navbar/Navbar";
-
 /* Importing Pages */
 import Intro from "./Pages/Intro/Intro";
 import About from "./Pages/About/About";
 import Vans from "./Pages/Vans/Vans";
 import VanDetail from "./Pages/Vans/VanDetail";
+import Layout from "./Components/Layout";
+import HostLayout from "./Components/HostLayout";
+import Dashboard from "./Pages/Host/Dashboard";
+import Income from "./Pages/Host/Income";
+import Review from "./Pages/Host/Review";
 
 import "./index.css";
 import "../server";
@@ -18,14 +19,20 @@ import "../server";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Intro />} />
-        <Route path="/vans" element={<Vans />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/vans/:id" element={<VanDetail />} />
+        <Route element={<Layout />}>
+          <Route path="" element={<Intro />} />
+          <Route path="vans" element={<Vans />} />
+          <Route path="about" element={<About />} />
+          <Route path="vans/:id" element={<VanDetail />} />
+
+          <Route path="host" element={<HostLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="income" element={<Income />} />
+            <Route path="review" element={<Review />} />
+          </Route>
+        </Route>
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }
