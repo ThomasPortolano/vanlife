@@ -15,7 +15,7 @@ export default function Layout() {
         <NavLink
           className="host__nav__elements"
           style={({ isActive }) => (isActive ? activeStyle : null)}
-          to="/host"
+          to="."
           end
         >
           Dashboard
@@ -23,21 +23,21 @@ export default function Layout() {
         <NavLink
           className="host__nav__elements"
           style={({ isActive }) => (isActive ? activeStyle : null)}
-          to="/host/income"
+          to="income"
         >
           Income
         </NavLink>
         <NavLink
           className="host__nav__elements"
           style={({ isActive }) => (isActive ? activeStyle : null)}
-          to="/host/vans"
+          to="vans"
         >
           Vans
         </NavLink>
         <NavLink
           className="host__nav__elements"
           style={({ isActive }) => (isActive ? activeStyle : null)}
-          to="/host/review"
+          to="review"
         >
           Reviews
         </NavLink>

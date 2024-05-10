@@ -1,4 +1,4 @@
-import "./Vans.css";
+import "../../Styles/Vans.css";
 import React from "react";
 import { useParams } from "react-router-dom";
 
