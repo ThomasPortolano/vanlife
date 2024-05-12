@@ -12,8 +12,6 @@ export default function VanDetail() {
       .then((data) => setVan(data.vans));
   }, [params.id]);
 
-  //   const upperCaseType = van.type.charAt(0).toUpperCase() + van.type.slice(1);
-
   return (
     <div className="van__detail__container">
       {van ? (

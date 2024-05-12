@@ -71,6 +71,7 @@ img.host__van__detail__image{
 .host__van__detail__snd__container{
     display: flex;
     flex-direction: row;
+    margin-top: 1rem;
 }
 
 .host__van__detail__third__container{
@@ -92,4 +93,14 @@ img.host__van__detail__image{
     flex-direction: row;
     gap: 3.5rem;
     margin-top: 1.4rem;
+}
+
+.host__van__details__backlink{
+    margin: 2rem;
+}
+
+.host__van__details__backlink>a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+
 }

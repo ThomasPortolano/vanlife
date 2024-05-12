@@ -85,3 +85,11 @@ img.van__image{
 button.van__detail__cta{
     width: 100%;
 }
+
+.host__vans__details--cat--title{
+    font-weight: 600;
+}
+
+.host__vans__details--cat--info{
+    margin: 2rem 0rem;
+}
