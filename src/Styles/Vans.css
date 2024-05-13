@@ -93,3 +93,41 @@ button.van__detail__cta{
 .host__vans__details--cat--info{
     margin: 2rem 0rem;
 }
+
+.van__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+}
+
+.van__filters__container {
+    margin-left: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.van__filters{
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font: inherit;
+    font-size: 0.8rem;
+}
+
+.van__clear{
+    margin-left: 1.8rem;
+    color: #4D4D4D;
+    text-decoration: underline;
+    font: inherit;
+    font-size: 0.8rem;
+    background-color: none;
+    text-decoration: none;
+}
+
+.van__filters:hover, .van__clear:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
