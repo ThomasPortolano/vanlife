@@ -6,6 +6,8 @@ export default function VanDetail() {
   const params = useParams();
   const [van, setVan] = React.useState(null);
   const location = useLocation();
+  const type = location.state?.type || "all";
+  const search = location.state?.search || "";
   console.log(location.state.type);
 
   React.useEffect(() => {
@@ -16,18 +18,8 @@ export default function VanDetail() {
 
   return (
     <div className="van__detail__container">
-      <Link
-        to={
-          location.state.search === null ? ".." : `..?${location.state.search}`
-        }
-        relative="path"
-        className="back-button"
-      >
-        &larr;{" "}
-        <span>
-          Back to {location.state.type === null ? "all" : location.state.type}{" "}
-          vans
-        </span>
+      <Link to={`..?${search}`} relative="path" className="back-button">
+        &larr; <span>Back to {type} vans</span>
       </Link>
       {van ? (
         <>
