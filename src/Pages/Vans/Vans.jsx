@@ -22,7 +22,10 @@ export default function Vans() {
 
     return (
       <div key={van.id}>
-        <Link to={`/vans/${van.id}`}>
+        <Link
+          to={van.id}
+          state={{ search: searchParams.toString(), type: typeFilter }}
+        >
           <img className="van__image" src={van.imageUrl} />
           <div className="van__details">
             <h2 className="van__name">{van.name}</h2>
@@ -40,31 +43,47 @@ export default function Vans() {
     );
   });
 
+  function handleFilterChange(key, value) {
+    setSearchParams((prevParams) => {
+      if (value === null) {
+        prevParams.delete(key);
+      } else {
+        prevParams.set(key, value);
+      }
+      return prevParams;
+    });
+  }
+
   return (
     <div className="van__container">
       <div className="van__title">Explore our van options</div>
       <div className="van__filters__container">
         <button
           className="van__filters"
-          onClick={() => setSearchParams({ type: "simple" })}
+          onClick={() => handleFilterChange("type", "simple")}
         >
           Simple
         </button>
         <button
           className="van__filters"
-          onClick={() => setSearchParams({ type: "luxury" })}
+          onClick={() => handleFilterChange("type", "luxury")}
         >
           Luxury
         </button>
         <button
           className="van__filters"
-          onClick={() => setSearchParams({ type: "rugged" })}
+          onClick={() => handleFilterChange("type", "rugged")}
         >
           Rugged
         </button>
-        <button className="van__clear" onClick={() => setSearchParams({})}>
-          Clear filter
-        </button>
+        {typeFilter ? (
+          <button
+            className="van__clear"
+            onClick={() => handleFilterChange("type", null)}
+          >
+            Clear filter
+          </button>
+        ) : null}
       </div>
 
       <div className="van__list">{vanElements}</div>
