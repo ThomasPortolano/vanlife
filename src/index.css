@@ -10,3 +10,20 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.notfound__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+a.return__home {
+  background-color: #161616;
+  color: #FFFFFF;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.4rem;
+  border-radius: 5px;;
+}
