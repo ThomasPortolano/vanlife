@@ -1,5 +1,6 @@
 import "../Styles/navbar.css";
 import { NavLink, Link } from "react-router-dom";
+// import { FaAddressBook } from "react-icons/fa6";
 
 export default function Navbar() {
   const activeStyle = {
@@ -34,6 +35,13 @@ export default function Navbar() {
           to="/vans"
         >
           Vans
+        </NavLink>
+        <NavLink
+          className="navbar__menu-item"
+          style={({ isActive }) => (isActive ? activeStyle : null)}
+          to="/login"
+        >
+          Login
         </NavLink>
       </div>
     </div>

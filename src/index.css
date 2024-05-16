@@ -27,3 +27,25 @@ a.return__home {
   padding: 1rem 1.4rem;
   border-radius: 5px;;
 }
+
+.login-container{
+  text-align: center;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  justify-content: center;
+}
+
+.form-field{
+  padding: 0.6rem;
+  border: 0.2px solid grey;
+  border-radius: 5px;
+}
+
+.form-button{
+  margin-top: 1rem;
+  padding: 0.8rem 0;
+}
+
