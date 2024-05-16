@@ -22,6 +22,7 @@ import Login from "./Pages/Login";
 
 import "./index.css";
 import "../server";
+import AuthRequired from "./Components/AuthRequired";
 
 function App() {
   return (
@@ -34,17 +35,20 @@ function App() {
           <Route path="vans/:id" element={<VanDetail />} />
           <Route path="login" element={<Login />} />
 
-          <Route path="host" element={<HostLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="income" element={<Income />} />
-            <Route path="vans" element={<HostVan />} />
-            <Route path="vans/:id" element={<HostVanDetails />}>
-              <Route index element={<HostVanInfo />} />
-              <Route path="pricing" element={<HostVanPricing />} />
-              <Route path="photos" element={<HostVanPhotos />} />
+          <Route element={<AuthRequired />}>
+            <Route path="host" element={<HostLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="income" element={<Income />} />
+              <Route path="vans" element={<HostVan />} />
+              <Route path="vans/:id" element={<HostVanDetails />}>
+                <Route index element={<HostVanInfo />} />
+                <Route path="pricing" element={<HostVanPricing />} />
+                <Route path="photos" element={<HostVanPhotos />} />
+              </Route>
+              <Route path="review" element={<Review />} />
             </Route>
-            <Route path="review" element={<Review />} />
           </Route>
+
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
