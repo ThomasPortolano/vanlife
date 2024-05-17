@@ -47,6 +47,10 @@ export default function HostVan() {
     return <h1>There was an error: {error.message}</h1>;
   }
 
+  function fakeLogOut() {
+    localStorage.removeItem("loggedin");
+  }
+
   return (
     <div className="host__van__container">
       <div className="host__van__title">Your Vans</div>

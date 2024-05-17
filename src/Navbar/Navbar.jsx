@@ -1,6 +1,5 @@
 import "../Styles/navbar.css";
 import { NavLink, Link } from "react-router-dom";
-// import { FaAddressBook } from "react-icons/fa6";
 
 export default function Navbar() {
   const activeStyle = {
@@ -8,6 +7,10 @@ export default function Navbar() {
     textDecoration: "underline",
     color: "#161616",
   };
+
+  function fakeLogOut() {
+    localStorage.removeItem("loggedin");
+  }
 
   return (
     <div className="navbar__container">
@@ -42,6 +45,9 @@ export default function Navbar() {
           to="/login"
         >
           Login
+        </NavLink>
+        <NavLink to="/login">
+          <button onClick={fakeLogOut}>X</button>
         </NavLink>
       </div>
     </div>
