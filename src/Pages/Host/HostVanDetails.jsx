@@ -6,6 +6,8 @@ import "../../Styles/host.css";
 export default function HostVanDetails() {
   const params = useParams();
   const [hostVansDetails, setHostVansDetails] = useState([]);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
 
   const activeStyle = {
     fontWeight: "bold",
@@ -14,10 +16,27 @@ export default function HostVanDetails() {
   };
 
   useEffect(() => {
-    fetch(`/api/host/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setHostVansDetails(data.vans[0]));
+    async function loadVans() {
+      setLoading(true);
+      try {
+        const data = await getHostVans();
+        setHostVans(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading;
+      }
+    }
+    loadVans();
   }, [params.id]);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>There was an error: {error.message}</h1>;
+  }
 
   return (
     <>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { loginUser } from "../api";
 
 export default function Login() {
   const [loginFormData, setLoginFormData] = React.useState({
@@ -7,12 +8,24 @@ export default function Login() {
     password: "",
   });
 
+  const [status, setStatus] = React.useState("idle");
+  const [error, setError] = React.useState(null);
+
   const location = useLocation();
-  console.log(location);
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(loginFormData);
+    setStatus("submitting");
+    loginUser(loginFormData)
+      .then((data) => {
+        setError(null);
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => {
+        setStatus("idle");
+      });
   }
 
   function handleChange(e) {
@@ -27,6 +40,7 @@ export default function Login() {
     <div className="login-container">
       {location.state?.message && <h2>{location.state.message}</h2>}
       <h1>Sign in to your account</h1>
+      {error?.message && <h3>{error.message}</h3>}
       <form onSubmit={handleSubmit} className="login-form">
         <input
           name="email"
@@ -44,7 +58,13 @@ export default function Login() {
           placeholder="Password"
           value={loginFormData.password}
         />
-        <button className="form-button">Log in</button>
+        <button
+          className="form-button"
+          type="submit"
+          disabled={status === "submitting"}
+        >
+          {status === "submitting" ? "Logging in..." : "Log in"}
+        </button>
       </form>
     </div>
   );
