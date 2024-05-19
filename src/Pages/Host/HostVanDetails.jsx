@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Outlet, useParams } from "react-router-dom";
+import { getVan } from "../../api";
 import "../../Styles/Vans.css";
 import "../../Styles/host.css";
 
@@ -15,16 +16,16 @@ export default function HostVanDetails() {
     color: "#161616",
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     async function loadVans() {
       setLoading(true);
       try {
-        const data = await getHostVans();
-        setHostVans(data);
+        const data = await getVan(params.id);
+        setHostVansDetails(data);
       } catch (err) {
         setError(err);
       } finally {
-        setLoading;
+        setLoading(false);
       }
     }
     loadVans();
